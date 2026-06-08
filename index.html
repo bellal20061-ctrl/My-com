@@ -1,40 +1,38 @@
-<!DOCTYPE html>
+<!DOCerYPE html>
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>তালুকদার কম্পিউটার | বিশ্বস্ত ডিজিটাল সেবা কেন্দ্র</title>
-    <meta name="description" content="সকল ধরনের কম্পিউটার, প্রিন্টিং, অনলাইন আবেদন ও ডিজিটাল সেবা এক ছাদের নিচে।">
+    <title>তালুকদার কম্পিউটার | আপনার বিশ্বস্ত ডিজিটাল সেবা কেন্দ্র</title>
+    <meta name="description" content="তালুকদার কম্পিউটার - আপনার বিশ্বস্ত ডিজিটাল সেবা কেন্দ্র। সেরা মানের ফটোকপি, প্রিন্ট, অনলাইন আবেদন এবং অন্যান্য কম্পিউটার সেবাসমূহ।">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
+        /* CSS Variables */
         :root {
-            --primary-color: #008C4A;
-            --secondary-color: #006334;
-            --accent-color: #E8F5E9;
-            --text-dark: #1F2937;
-            --text-light: #4B5563;
-            --bg-body: #F4F8F5;
-            --bg-white: #FFFFFF;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
-            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-            --border-radius: 12px;
+            --primary: #16a34a;
+            --secondary: #22c55e;
+            --primary-light: #dcfce7;
+            --bg-pure: #ffffff;
+            --text-dark: #111827;
+            --text-body: #4b5563;
+            --text-muted: #6b7280;
+            --border-color: #f3f4f6;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Hind Siliguri', sans-serif;
         }
 
         html {
@@ -43,56 +41,60 @@
         }
 
         body {
-            background-color: var(--bg-body);
-            color: var(--text-dark);
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: var(--bg-pure);
+            color: var(--text-body);
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-dark);
+            font-weight: 700;
+            line-height: 1.2;
         }
 
         a {
             text-decoration: none;
             color: inherit;
+            transition: var(--transition);
         }
 
         ul {
             list-style: none;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Typography */
         .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
             text-align: center;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 40px;
+            margin-bottom: 3rem;
             position: relative;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary-color);
-            border-radius: 2px;
-        }
-
         /* Header & Navigation */
-        header.nav-header {
+        header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: var(--bg-white);
-            box-shadow: var(--shadow-sm);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
             z-index: 1000;
             transition: var(--transition);
         }
@@ -104,386 +106,435 @@
             height: 80px;
         }
 
-        .logo-container {
+        .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 0.75rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-dark);
         }
 
-        .logo-container img {
-            height: 50px;
+        .logo img {
+            height: 45px;
             width: auto;
             object-fit: contain;
         }
 
-        .nav-links {
+        .nav-menu {
             display: flex;
-            gap: 30px;
+            gap: 2.5rem;
         }
 
-        .nav-links li a {
-            font-size: 16px;
+        .nav-link {
             font-weight: 600;
-            color: var(--text-dark);
+            color: var(--text-body);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
             transition: var(--transition);
-            padding: 8px 0;
         }
 
-        .nav-links li a:hover {
-            color: var(--primary-color);
+        .nav-link:hover {
+            color: var(--primary);
         }
 
-        .mobile-menu-btn {
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu */
+        .hamburger {
             display: none;
-            font-size: 24px;
-            color: var(--text-dark);
             cursor: pointer;
             border: none;
-            background: none;
+            background: transparent;
+            padding: 0.5rem;
+        }
+
+        .hamburger-line {
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-dark);
+            margin: 5px 0;
+            transition: var(--transition);
         }
 
         /* Hero Section */
-        .hero-section {
-            padding: 140px 0 80px;
-            background: linear-gradient(to bottom, var(--bg-white), var(--bg-body));
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
+        .hero {
+            padding-top: 130px;
+            padding-bottom: 3rem;
+            text-align: center;
         }
 
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            line-height: 1.2;
-        }
-
-        .hero-text h2 {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 20px;
-        }
-
-        .hero-text p {
-            font-size: 18px;
-            color: var(--text-light);
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
+        .smart-greeting {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
+            gap: 0.5rem;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            opacity: 0;
+            animation: fadeUp 0.6s ease forwards;
         }
 
-        .btn-primary {
-            background-color: #25D366;
-            color: white;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            opacity: 0;
+            animation: fadeUp 0.6s ease 0.1s forwards;
         }
 
-        .btn-primary:hover {
-            background-color: #1DA851;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeUp 0.6s ease 0.2s forwards;
         }
 
-        .btn-secondary {
-            background-color: #1877F2;
-            color: white;
-            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+        .hero-desc {
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.125rem;
+            color: var(--text-body);
+            opacity: 0;
+            animation: fadeUp 0.6s ease 0.3s forwards;
         }
 
-        .btn-secondary:hover {
-            background-color: #145DBF;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
+        .hero-image-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.4s forwards;
         }
 
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-image img {
-            max-width: 100%;
+        .hero-image-wrapper img {
+            width: 100%;
             height: auto;
-            max-height: 400px;
-            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
-            animation: float 6s ease-in-out infinite;
+            display: block;
+            margin: 0 auto;
+            object-fit: contain;
         }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+        /* Notice Ticker Section (Premium Slim Bar) */
+        .notice-ticker-wrapper {
+            max-width: 1000px;
+            margin: 2rem auto 4rem auto;
+            padding: 0 1.5rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.5s forwards;
         }
 
-        /* Services Section */
-        .services-section {
-            padding: 80px 0;
+        .notice-bar {
+            display: flex;
+            background: var(--bg-pure);
+            border: 1px solid var(--primary-light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .notice-label {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+
+        .notice-scroll-area {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .notice-track {
+            display: inline-flex;
+            white-space: nowrap;
+            animation: scrollLeft 20s linear infinite;
+        }
+
+        .notice-track:hover {
+            animation-play-state: paused;
+        }
+
+        .notice-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0 2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        @keyframes scrollLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Services Section (Grid with Slide-in-Right Animation) */
+        .services {
+            padding: 5rem 0;
+            background-color: var(--bg-pure);
+            overflow: hidden; /* Prevents horizontal scroll during animation */
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
         }
 
         .service-card {
-            background-color: var(--bg-white);
-            padding: 30px 20px;
-            border-radius: var(--border-radius);
+            background: var(--bg-pure);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             box-shadow: var(--shadow-sm);
-            text-align: center;
             transition: var(--transition);
-            border: 1px solid transparent;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent-color);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
-            background-color: var(--accent-color);
-            color: var(--primary-color);
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+            flex-shrink: 0;
+            background: var(--primary-light);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin: 0 auto 20px;
-            transition: var(--transition);
+            padding: 4px;
         }
 
-        .service-card:hover .service-icon {
-            background-color: var(--primary-color);
-            color: var(--bg-white);
-        }
-
-        .service-card h3 {
-            font-size: 18px;
+        .service-name {
+            font-size: 1.15rem;
             font-weight: 600;
             color: var(--text-dark);
         }
 
-        /* Special Notice Section */
-        .notice-section {
-            padding: 40px 0;
+        /* Slide In Right Animation */
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(150px);
+            transition: opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
-        .notice-card {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: var(--border-radius);
-            padding: 40px;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-        }
-
-        .notice-card h3 {
-            color: var(--bg-white);
-            font-size: 22px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .notice-card i {
-            font-size: 28px;
-            color: #FFD700;
+        .slide-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         /* Features Section */
-        .features-section {
-            padding: 80px 0;
-            background-color: var(--bg-white);
+        .features {
+            padding: 6rem 0;
+            background: #fafafa;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
-        .feature-item {
+        .feature-card {
+            padding: 2.5rem;
+            background: var(--bg-pure);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .feature-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-light);
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 20px;
-            padding: 20px;
-            background-color: var(--bg-body);
-            border-radius: var(--border-radius);
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            color: var(--primary);
             transition: var(--transition);
         }
 
-        .feature-item:hover {
-            background-color: var(--accent-color);
-            transform: translateX(5px);
+        .feature-card:hover .feature-icon-wrapper {
+            background: var(--primary);
+            color: white;
         }
 
         .feature-icon {
-            font-size: 24px;
-            color: var(--primary-color);
+            width: 32px;
+            height: 32px;
         }
 
-        .feature-text {
-            font-size: 18px;
-            font-weight: 600;
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
         }
 
         /* Contact Section */
-        .contact-section {
-            padding: 80px 0;
+        .contact {
+            padding: 6rem 0;
+            border-top: 1px solid var(--border-color);
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .contact-card {
-            background-color: var(--bg-white);
-            padding: 40px 30px;
-            border-radius: var(--border-radius);
+            background: var(--bg-pure);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
             transition: var(--transition);
         }
 
         .contact-card:hover {
             box-shadow: var(--shadow-md);
-            transform: translateY(-3px);
+            border-color: var(--primary);
+            transform: translateY(-5px);
         }
 
-        .contact-icon {
-            font-size: 40px;
-            margin-bottom: 20px;
+        .contact-icon-wrapper {
+            width: 48px;
+            height: 48px;
+            color: var(--primary);
+            margin: 0 auto 1rem auto;
         }
 
-        .whatsapp-icon { color: #25D366; }
-        .email-icon { color: #EA4335; }
-        .fb-icon { color: #1877F2; }
-
-        .contact-card h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: var(--text-dark);
-        }
-
-        .contact-card a {
-            font-size: 18px;
-            color: var(--text-light);
+        .contact-label {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
             font-weight: 500;
-            transition: var(--transition);
         }
 
-        .contact-card a:hover {
-            color: var(--primary-color);
+        .contact-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
         }
 
         /* Footer */
         footer {
-            background-color: var(--text-dark);
-            color: var(--bg-white);
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 0;
             text-align: center;
-            padding: 30px 20px;
         }
 
-        footer p {
-            font-size: 16px;
-            opacity: 0.9;
+        .footer-text {
+            font-size: 1.1rem;
+            color: #9ca3af;
         }
 
-        /* Floating Elements */
-        .floating-whatsapp {
+        /* Floating Actions */
+        .fab-container {
             position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: #25D366;
-            color: white;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 99;
+        }
+
+        .fab-btn {
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            z-index: 999;
+            color: white;
+            box-shadow: var(--shadow-lg);
             transition: var(--transition);
-        }
-
-        .floating-whatsapp:hover {
-            transform: scale(1.1);
-            background-color: #1DA851;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: var(--shadow-md);
-            z-index: 999;
             cursor: pointer;
             border: none;
+        }
+
+        .fab-whatsapp {
+            background: #25D366;
+        }
+
+        .fab-whatsapp:hover {
+            background: #1da851;
+            transform: scale(1.1);
+        }
+
+        .fab-top {
+            background: var(--text-dark);
             opacity: 0;
             visibility: hidden;
-            transition: var(--transition);
             transform: translateY(20px);
         }
 
-        .back-to-top.show {
+        .fab-top.show {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
 
-        .back-to-top:hover {
-            background-color: var(--secondary-color);
+        .fab-top:hover {
+            background: var(--primary);
         }
 
-        /* Reveal Animations */
+        .fab-svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Utilities & Animations */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
             transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
         }
 
@@ -492,68 +543,57 @@
             transform: translateY(0);
         }
 
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 30px;
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
-            .hero-text h1 { font-size: 40px; }
-            .hero-buttons { justify-content: center; }
-            .hero-image img { max-height: 300px; }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .mobile-menu-btn { display: block; }
-            
-            .nav-links {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
                 position: fixed;
                 top: 80px;
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 80px);
-                background-color: var(--bg-white);
+                background: var(--bg-pure);
                 flex-direction: column;
                 align-items: center;
-                padding-top: 50px;
-                transition: var(--transition);
-                box-shadow: var(--shadow-md);
+                padding-top: 3rem;
+                gap: 2rem;
+                transition: 0.4s ease-in-out;
             }
 
-            .nav-links.active {
+            .nav-menu.active {
                 left: 0;
             }
 
-            .nav-links li a {
-                font-size: 20px;
-                display: block;
-                padding: 15px;
+            .nav-link {
+                font-size: 1.25rem;
             }
-
-            .hero-text h1 { font-size: 32px; }
-            .hero-text h2 { font-size: 20px; }
-            .section-title { font-size: 24px; }
             
-            .notice-card h3 {
-                font-size: 18px;
-                flex-direction: column;
-                gap: 10px;
+            .hero {
+                padding-top: 120px;
             }
 
-            .floating-whatsapp {
-                bottom: 20px;
-                left: 20px;
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
+            .notice-label {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
             }
-
-            .back-to-top {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
+            
+            .fab-container {
+                bottom: 1.5rem;
+                right: 1.5rem;
             }
         }
     </style>
@@ -561,246 +601,315 @@
 <body>
 
     <!-- Header Navigation -->
-    <header class="nav-header">
+    <header id="header">
         <div class="container nav-container">
-            <div class="logo-container">
-                <img src="https://i.postimg.cc/tRVXBwsZ/IMG-20251121-111324576.png" alt="তালুকদার কম্পিউটার লোগো">
-            </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
+            <a href="#" class="logo">
+                <img src="https://i.postimg.cc/tRVXBwsZ/IMG-20251121-111324576.png" alt="তালুকদার কম্পিউটার লোগো" loading="lazy">
+                তালুকদার কম্পিউটার
+            </a>
+            
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link">হোম</a></li>
+                    <li><a href="#services" class="nav-link">সেবাসমূহ</a></li>
+                    <li><a href="#features" class="nav-link">বৈশিষ্ট্য</a></li>
+                    <li><a href="#contact" class="nav-link">যোগাযোগ</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
             </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#features" class="nav-link">Features</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container hero-content">
-            <div class="hero-text reveal">
-                <h1>তালুকদার কম্পিউটার</h1>
-                <h2>বিশ্বস্ত ডিজিটাল সেবা কেন্দ্র</h2>
-                <p>সকল ধরনের কম্পিউটার, প্রিন্টিং, অনলাইন আবেদন ও ডিজিটাল সেবা এক ছাদের নিচে।</p>
-                <div class="hero-buttons">
-                    <a href="https://wa.me/8801743629414" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-whatsapp"></i> WhatsApp যোগাযোগ
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=100025196951485" target="_blank" class="btn btn-secondary">
-                        <i class="fab fa-facebook-f"></i> Facebook ভিজিট করুন
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image reveal">
-                <img src="https://i.postimg.cc/tRVXBwsZ/IMG-20251121-111324576.png" alt="তালুকদার কম্পিউটার">
-            </div>
+    <section id="home" class="hero container">
+        <div class="smart-greeting">
+            <svg style="width:18px;height:18px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+            <span id="greeting-text">স্বাগতম</span>
+        </div>
+        
+        <h1 class="hero-title">তালুকদার কম্পিউটার</h1>
+        <h2 class="hero-subtitle">আপনার বিশ্বস্ত ডিজিটাল সেবা কেন্দ্র</h2>
+        <p class="hero-desc">আধুনিক প্রযুক্তি ও অভিজ্ঞতার সমন্বয়ে আমরা প্রদান করছি দ্রুত, নিরাপদ এবং সাশ্রয়ী মূল্যের সকল ডিজিটাল সেবা। আপনার যেকোনো প্রয়োজনে আমরা আছি আপনার পাশে।</p>
+        
+        <div class="hero-image-wrapper">
+            <img src="https://lmnx9.xn--45bl4db.xn--54b7fta0cc//uploads/IMG_20260607_091816_846.png" alt="ডিজিটাল সেবা" fetchpriority="high">
         </div>
     </section>
-
     <!-- Services Section -->
-    <section id="services" class="services-section container reveal">
-        <h2 class="section-title">আমাদের সেবাসমূহ</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-copy"></i></div>
-                <h3>সেরা মানের ফটোকপি</h3>
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title reveal">আমাদের সেবাসমূহ</h2>
+            
+            <div class="services-grid" id="services-grid">
+                <!-- Services will be injected via JS with right-to-left slide animation -->
             </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-camera"></i></div>
-                <h3>ছবি থেকে ছবি তোলা</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-print"></i></div>
-                <h3>কালার প্রিন্ট</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-file-contract"></i></div>
-                <h3>দলিলের কালার ফটোকপি</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-layer-group"></i></div>
-                <h3>লেমিনেটিং</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-expand"></i></div>
-                <h3>স্ক্যানিং</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-envelope"></i></div>
-                <h3>ই-মেইল</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-id-card-clip"></i></div>
-                <h3>ই-টিন</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-briefcase"></i></div>
-                <h3>সকল চাকুরীর আবেদন</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-passport"></i></div>
-                <h3>বিএমইটি নিবন্ধন</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
-                <h3>পুলিশ ক্লিয়ারেন্স</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-id-badge"></i></div>
-                <h3>ID কার্ড আবেদন</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-images"></i></div>
-                <h3>ল্যাব প্রিন্ট ছবির অর্ডার</h3>
-            </div>
-        </div>
-    </section>
-
-    <!-- Special Notice Section -->
-    <section class="notice-section container reveal">
-        <div class="notice-card">
-            <h3>
-                <i class="fas fa-bullhorn"></i>
-                বিঃদ্রঃ 100% সিকিউরিটি সহকারে স্কুল, মাদ্রাসার প্রশ্নপত্র টাইপিং করা হয়।
-            </h3>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features-section">
-        <div class="container reveal">
-            <h2 class="section-title">কেন আমাদের বেছে নিবেন?</h2>
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title reveal">কেন আমাদের বেছে নিবেন?</h2>
+            
             <div class="features-grid">
-                <div class="feature-item">
-                    <i class="fas fa-bolt feature-icon"></i>
-                    <span class="feature-text">দ্রুত সেবা</span>
+                <!-- Feature 1 -->
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">দ্রুত সেবা</h3>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-database feature-icon"></i>
-                    <span class="feature-text">নিরাপদ তথ্য সংরক্ষণ</span>
+
+                <!-- Feature 2 -->
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">নিরাপদ তথ্য সংরক্ষণ</h3>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-handshake feature-icon"></i>
-                    <span class="feature-text">নির্ভরযোগ্যতা</span>
+
+                <!-- Feature 3 -->
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">নির্ভরযোগ্যতা</h3>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-tags feature-icon"></i>
-                    <span class="feature-text">সাশ্রয়ী মূল্য</span>
+
+                <!-- Feature 4 -->
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">অভিজ্ঞ সেবা</h3>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-star feature-icon"></i>
-                    <span class="feature-text">অভিজ্ঞ সেবা</span>
+
+                <!-- Feature 5 -->
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">সাশ্রয়ী মূল্য</h3>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-face-smile feature-icon"></i>
-                    <span class="feature-text">গ্রাহক সন্তুষ্টি</span>
+
+                <!-- Feature 6 -->
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">গ্রাহক সন্তুষ্টি</h3>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section container reveal">
-        <h2 class="section-title">যোগাযোগ করুন</h2>
-        <div class="contact-grid">
-            <div class="contact-card">
-                <i class="fab fa-whatsapp contact-icon whatsapp-icon"></i>
-                <h3>WhatsApp</h3>
-                <a href="https://wa.me/8801743629414" target="_blank">01743629414</a>
-            </div>
-            <div class="contact-card">
-                <i class="fas fa-envelope contact-icon email-icon"></i>
-                <h3>Email</h3>
-                <a href="mailto:robiul.cfs@gmail.com">robiul.cfs@gmail.com</a>
-            </div>
-            <div class="contact-card">
-                <i class="fab fa-facebook contact-icon fb-icon"></i>
-                <h3>Facebook</h3>
-                <a href="https://www.facebook.com/profile.php?id=100025196951485" target="_blank">ভিজিট করুন</a>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title reveal">যোগাযোগ করুন</h2>
+            
+            <div class="contact-grid">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/8801743629414" target="_blank" class="contact-card reveal">
+                    <div class="contact-icon-wrapper">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-label">হোয়াটসঅ্যাপ</div>
+                    <div class="contact-value">01743629414</div>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:robiul.cfs@gmail.com" class="contact-card reveal">
+                    <div class="contact-icon-wrapper">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="contact-label">ই-মেইল</div>
+                    <div class="contact-value" style="font-size:1.1rem">robiul.cfs@gmail.com</div>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/profile.php?id=100025196951485" target="_blank" class="contact-card reveal">
+                    <div class="contact-icon-wrapper">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-label">ফেসবুক</div>
+                    <div class="contact-value" style="font-size:1.1rem">প্রোফাইল ভিজিট করুন</div>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 তালুকদার কম্পিউটার | সর্বস্বত্ব সংরক্ষিত</p>
+        <div class="container">
+            <p class="footer-text">&copy;  Developer Bellal Hasan 
+</p>
+        </div>
     </footer>
 
-    <!-- Floating Buttons -->
-    <a href="https://wa.me/8801743629414" target="_blank" class="floating-whatsapp" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    
-    <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <!-- Floating Actions -->
+    <div class="fab-container">
+        <!-- WhatsApp FAB -->
+        <a href="https://wa.me/8801743629414" target="_blank" class="fab-btn fab-whatsapp" aria-label="WhatsApp">
+            <svg class="fab-svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </a>
+        
+        <!-- Back To Top -->
+        <button id="backToTop" class="fab-btn fab-top" aria-label="Back to Top">
+            <svg class="fab-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+            </svg>
+        </button>
+    </div>
 
     <!-- JavaScript -->
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        const navItems = document.querySelectorAll('.nav-link');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = mobileMenuBtn.querySelector('i');
-            if(navLinks.classList.contains('active')){
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        // Close mobile menu on link click
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-            });
-        });
-
-        // Back to Top Button Visibility
-        const backToTopBtn = document.getElementById('backToTopBtn');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Scroll Reveal Animation
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Smart Greeting Logic
+            const setGreeting = () => {
+                const hour = new Date().getHours();
+                let greeting = "শুভ রাত্রি";
                 
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
+                if (hour >= 5 && hour < 12) {
+                    greeting = "শুভ সকাল";
+                } else if (hour >= 12 && hour < 16) {
+                    greeting = "শুভ দুপুর";
+                } else if (hour >= 16 && hour < 18) {
+                    greeting = "শুভ বিকেল";
+                } else if (hour >= 18 && hour < 20) {
+                    greeting = "শুভ সন্ধ্যা";
                 }
-            }
-        }
-        
-        window.addEventListener("scroll", reveal);
-        // Trigger once on load
-        reveal();
+                
+                document.getElementById('greeting-text').textContent = greeting;
+            };
+            setGreeting();
+
+            // Mobile Menu Toggle
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Populate Services with Slide-In Animation (Right to Left entering)
+            const services = [
+                "সেরা মানের ফটোকপি",
+                "ছবি থেকে ছবি তোলা",
+                "কালার প্রিন্ট",
+                "দলিলের কালার ফটোকপি",
+                "লেমিনেটিং",
+                "স্ক্যানিং",
+                "ই-মেইল",
+                "ই-টিন",
+                "সকল চাকুরীর আবেদন",
+                "বিএমইটি নিবন্ধন",
+                "পুলিশ ক্লিয়ারেন্স",
+                "ID কার্ড আবেদন",
+                "ল্যাব প্রিন্ট ছবির অর্ডার"
+            ];
+
+            const checkIconSVG = `<svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>`;
+            
+            const servicesGrid = document.getElementById('services-grid');
+            
+            services.forEach((service, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'service-card slide-in-right';
+                // Add staggered animation delay
+                itemDiv.style.transitionDelay = `${index * 0.08}s`;
+                
+                itemDiv.innerHTML = `
+                    ${checkIconSVG} 
+                    <span class="service-name">${service}</span>
+                `;
+                servicesGrid.appendChild(itemDiv);
+            });
+
+            // Intersection Observer for Animations
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // No unobserve for continuous replay, or unobserve if you want it once:
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            // Observe traditional bottom-to-top reveals
+            document.querySelectorAll('.reveal').forEach(el => revealOnScroll.observe(el));
+            
+            // Observe new right-to-left slide elements
+            document.querySelectorAll('.slide-in-right').forEach(el => revealOnScroll.observe(el));
+
+            // Back to Top Button & Header Box Shadow
+            const backToTopBtn = document.getElementById('backToTop');
+            const header = document.getElementById('header');
+            
+            window.addEventListener('scroll', () => {
+                // Header Shadow
+                if (window.scrollY > 10) {
+                    header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.boxShadow = 'none';
+                }
+
+                // Back to Top logic
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>

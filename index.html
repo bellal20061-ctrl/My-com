@@ -1,4 +1,4 @@
-<!DOCerYPE html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
@@ -25,6 +25,9 @@
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            /* Premium 3D Floating Shadow */
+            --shadow-3d: 0 20px 30px -10px rgba(0, 0, 0, 0.2), 0 10px 15px -5px rgba(0, 0, 0, 0.1);
+            --shadow-3d-hover: 0 25px 35px -10px rgba(0, 0, 0, 0.25), 0 15px 20px -5px rgba(0, 0, 0, 0.15);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -63,12 +66,6 @@
 
         ul {
             list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
         }
 
         .container {
@@ -171,11 +168,54 @@
 
         /* Hero Section */
         .hero {
-            padding-top: 130px;
+            padding-top: 110px;
             padding-bottom: 3rem;
             text-align: center;
         }
 
+        /* =========================================
+           Premium 16:9 E-Commerce Auto Slider 
+           ========================================= */
+        .hero-banner-slider {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 3rem auto;
+            aspect-ratio: 16 / 9; /* Strictly forces 16:9 ratio */
+            border-radius: 12px; /* Rounded corners */
+            overflow: hidden;
+            box-shadow: var(--shadow-3d); /* 3D Floating Effect */
+            position: relative;
+            transform: translateZ(0); /* Hardware acceleration for smooth animation */
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .hero-banner-slider:hover {
+            box-shadow: var(--shadow-3d-hover);
+        }
+
+        .banner-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s ease-in-out; /* Smooth Slide Animation */
+        }
+
+        .banner-slide {
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0; /* Prevents squeezing */
+        }
+
+        .banner-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill; /* Forces the image to completely fill the 16:9 container without clipping */
+            display: block;
+        }
+
+        /* Greeting & Texts */
         .smart-greeting {
             display: inline-flex;
             align-items: center;
@@ -189,7 +229,7 @@
             margin-bottom: 1.5rem;
             box-shadow: var(--shadow-sm);
             opacity: 0;
-            animation: fadeUp 0.6s ease forwards;
+            animation: fadeUp 0.6s ease 0.2s forwards;
         }
 
         .hero-title {
@@ -198,7 +238,7 @@
             margin-bottom: 1rem;
             color: var(--text-dark);
             opacity: 0;
-            animation: fadeUp 0.6s ease 0.1s forwards;
+            animation: fadeUp 0.6s ease 0.3s forwards;
         }
 
         .hero-subtitle {
@@ -207,7 +247,7 @@
             font-weight: 600;
             margin-bottom: 1rem;
             opacity: 0;
-            animation: fadeUp 0.6s ease 0.2s forwards;
+            animation: fadeUp 0.6s ease 0.4s forwards;
         }
 
         .hero-desc {
@@ -216,14 +256,14 @@
             font-size: 1.125rem;
             color: var(--text-body);
             opacity: 0;
-            animation: fadeUp 0.6s ease 0.3s forwards;
+            animation: fadeUp 0.6s ease 0.5s forwards;
         }
 
         .hero-image-wrapper {
             max-width: 900px;
             margin: 0 auto;
             opacity: 0;
-            animation: fadeUp 0.8s ease 0.4s forwards;
+            animation: fadeUp 0.8s ease 0.6s forwards;
         }
 
         .hero-image-wrapper img {
@@ -234,13 +274,13 @@
             object-fit: contain;
         }
 
-        /* Notice Ticker Section (Premium Slim Bar) */
+        /* Notice Ticker Section */
         .notice-ticker-wrapper {
             max-width: 1000px;
             margin: 2rem auto 4rem auto;
             padding: 0 1.5rem;
             opacity: 0;
-            animation: fadeUp 0.8s ease 0.5s forwards;
+            animation: fadeUp 0.8s ease 0.7s forwards;
         }
 
         .notice-bar {
@@ -298,11 +338,11 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* Services Section (Grid with Slide-in-Right Animation) */
+        /* Services Section */
         .services {
             padding: 5rem 0;
             background-color: var(--bg-pure);
-            overflow: hidden; /* Prevents horizontal scroll during animation */
+            overflow: hidden;
         }
 
         .services-grid {
@@ -583,7 +623,7 @@
             }
             
             .hero {
-                padding-top: 120px;
+                padding-top: 100px;
             }
 
             .notice-label {
@@ -627,6 +667,21 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero container">
+        
+        <!-- 16:9 E-Commerce Top Auto-Slider -->
+        <div class="hero-banner-slider">
+            <div class="banner-track" id="banner-track">
+                <!-- Slide 1 -->
+                <div class="banner-slide">
+                    <img src="https://i.postimg.cc/wv16ZP42/file-00000000a94c7208a7bc2ba6bf771767.png" alt="ব্যানার ১" fetchpriority="high">
+                </div>
+                <!-- Slide 2 -->
+                <div class="banner-slide">
+                    <img src="https://i.postimg.cc/2STLfsTf/aca-cha-tha-ka-acha-e'i-sa-ija-202606120057.jpg" alt="ব্যানার ২">
+                </div>
+            </div>
+        </div>
+
         <div class="smart-greeting">
             <svg style="width:18px;height:18px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
@@ -648,7 +703,7 @@
             <h2 class="section-title reveal">আমাদের সেবাসমূহ</h2>
             
             <div class="services-grid" id="services-grid">
-                <!-- Services will be injected via JS with right-to-left slide animation -->
+                <!-- Services injected via JS -->
             </div>
         </div>
     </section>
@@ -659,7 +714,6 @@
             <h2 class="section-title reveal">কেন আমাদের বেছে নিবেন?</h2>
             
             <div class="features-grid">
-                <!-- Feature 1 -->
                 <div class="feature-card reveal">
                     <div class="feature-icon-wrapper">
                         <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -669,7 +723,6 @@
                     <h3 class="feature-title">দ্রুত সেবা</h3>
                 </div>
 
-                <!-- Feature 2 -->
                 <div class="feature-card reveal">
                     <div class="feature-icon-wrapper">
                         <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -679,7 +732,6 @@
                     <h3 class="feature-title">নিরাপদ তথ্য সংরক্ষণ</h3>
                 </div>
 
-                <!-- Feature 3 -->
                 <div class="feature-card reveal">
                     <div class="feature-icon-wrapper">
                         <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -689,7 +741,6 @@
                     <h3 class="feature-title">নির্ভরযোগ্যতা</h3>
                 </div>
 
-                <!-- Feature 4 -->
                 <div class="feature-card reveal">
                     <div class="feature-icon-wrapper">
                         <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -699,7 +750,6 @@
                     <h3 class="feature-title">অভিজ্ঞ সেবা</h3>
                 </div>
 
-                <!-- Feature 5 -->
                 <div class="feature-card reveal">
                     <div class="feature-icon-wrapper">
                         <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -709,7 +759,6 @@
                     <h3 class="feature-title">সাশ্রয়ী মূল্য</h3>
                 </div>
 
-                <!-- Feature 6 -->
                 <div class="feature-card reveal">
                     <div class="feature-icon-wrapper">
                         <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -767,14 +816,13 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">&copy;  Developer Bellal Hasan 
-</p>
+            <p class="footer-text">&copy; Developer by Bellal Hasan </p>
         </div>
     </footer>
 
     <!-- Floating Actions -->
     <div class="fab-container">
-        <!-- WhatsApp FAB -->
+        <!-- WhatsApp -->
         <a href="https://wa.me/8801743629414" target="_blank" class="fab-btn fab-whatsapp" aria-label="WhatsApp">
             <svg class="fab-svg" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -793,7 +841,20 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // Smart Greeting Logic
+            // --- 2 Second Auto Slider Logic ---
+            const bannerTrack = document.getElementById('banner-track');
+            const bannerSlides = document.querySelectorAll('.banner-slide');
+            const totalBanners = bannerSlides.length;
+            let currentBanner = 0;
+
+            if (totalBanners > 1) {
+                setInterval(() => {
+                    currentBanner = (currentBanner + 1) % totalBanners;
+                    bannerTrack.style.transform = `translateX(-${currentBanner * 100}%)`;
+                }, 3000); // ২ সেকেন্ড পরপর স্লাইড হবে
+            }
+
+            // --- Smart Greeting Logic ---
             const setGreeting = () => {
                 const hour = new Date().getHours();
                 let greeting = "শুভ রাত্রি";
@@ -812,7 +873,7 @@
             };
             setGreeting();
 
-            // Mobile Menu Toggle
+            // --- Mobile Menu Toggle ---
             const hamburger = document.getElementById('hamburger');
             const navMenu = document.getElementById('nav-menu');
             const navLinks = document.querySelectorAll('.nav-link');
@@ -827,7 +888,7 @@
                 });
             });
 
-            // Populate Services with Slide-In Animation (Right to Left entering)
+            // --- Populate Services with Slide-In Animation ---
             const services = [
                 "সেরা মানের ফটোকপি",
                 "ছবি থেকে ছবি তোলা",
@@ -851,7 +912,6 @@
             services.forEach((service, index) => {
                 const itemDiv = document.createElement('div');
                 itemDiv.className = 'service-card slide-in-right';
-                // Add staggered animation delay
                 itemDiv.style.transitionDelay = `${index * 0.08}s`;
                 
                 itemDiv.innerHTML = `
@@ -861,7 +921,7 @@
                 servicesGrid.appendChild(itemDiv);
             });
 
-            // Intersection Observer for Animations
+            // --- Intersection Observer for Animations ---
             const revealOptions = {
                 threshold: 0.15,
                 rootMargin: "0px 0px -50px 0px"
@@ -871,31 +931,25 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
-                        // No unobserve for continuous replay, or unobserve if you want it once:
                         observer.unobserve(entry.target);
                     }
                 });
             }, revealOptions);
 
-            // Observe traditional bottom-to-top reveals
             document.querySelectorAll('.reveal').forEach(el => revealOnScroll.observe(el));
-            
-            // Observe new right-to-left slide elements
             document.querySelectorAll('.slide-in-right').forEach(el => revealOnScroll.observe(el));
 
-            // Back to Top Button & Header Box Shadow
+            // --- Back to Top Button & Header Box Shadow ---
             const backToTopBtn = document.getElementById('backToTop');
             const header = document.getElementById('header');
             
             window.addEventListener('scroll', () => {
-                // Header Shadow
                 if (window.scrollY > 10) {
                     header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
                 } else {
                     header.style.boxShadow = 'none';
                 }
 
-                // Back to Top logic
                 if (window.scrollY > 400) {
                     backToTopBtn.classList.add('show');
                 } else {
